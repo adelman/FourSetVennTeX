@@ -1,0 +1,192 @@
+\tikzstyle{reverseclip}=[insert path={(current page.north east) --
+  (current page.south east) --
+  (current page.south west) --
+  (current page.north west) --
+  (current page.north east)}
+]
+
+\tikzset{
+    venn0/.code={ %outside
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn1/.code={ %Just upper left
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn2/.code={ % just left
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip;
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn3/.code={ % just C n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip;
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn4/.code={ % Just upper right
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip;
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn5/.code={ % just B n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip;
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn6/.code={ % just C n B
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip;
+            \clip \thirdellip;
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn7/.code={ % just C n B n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip  [reverseclip];
+            \clip \secondellip;
+            \clip \thirdellip;
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn8/.code={ % just right
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn9/.code={ % just A n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn10/.code={ % just A n C
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip;
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn11/.code={ % Just A n C n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip [reverseclip];
+            \clip \thirdellip;
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn12/.code={ % just A n B
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip;
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn13/.code={ % A n B n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip;
+            \clip \thirdellip [reverseclip];
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn14/.code={ % A n B n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip;
+            \clip \thirdellip;
+            \clip \fourthellip [reverseclip];
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    venn15/.code={ % A n B n C n D
+        \begin{scope}
+            \begin{pgfinterruptboundingbox}
+            \clip \firstellip;
+            \clip \secondellip;
+            \clip \thirdellip;
+            \clip \fourthellip;
+            \end{pgfinterruptboundingbox}
+            \fill [gray] \bounding;
+        \end{scope}
+    },
+    vennoutlines/.code={
+        \draw \firstellip node [label={[xshift=2.0cm, yshift=-0.9cm]$A$}] {};
+        \draw \secondellip node [label={[xshift=2.2cm, yshift=2.1cm]$B$}] {};
+        \draw \thirdellip node [label={[xshift=-2.0cm, yshift=-0.9cm]$C$}] {};
+        \draw \fourthellip node [label={[xshift=-2.2cm, yshift=2.1cm]$D$}] {};
+        \draw \bounding node [label=above left:$U$] {};
+    }
+}

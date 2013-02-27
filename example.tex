@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+
+% Needed for the input of venn
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes.geometric,calc}
+
+% For drawing: This defines the size and position of the ellipses
+\def\firstellip{(1.6, 0) ellipse [x radius=3cm, y radius=1.5cm, rotate=50]}
+\def\secondellip{(0.3, 1cm) ellipse [x radius=3cm, y radius=1.5cm, rotate=50]}
+\def\thirdellip{(-1.6, 0) ellipse [x radius=3cm, y radius=1.5cm, rotate=-50]}
+\def\fourthellip{(-0.3, 1cm) ellipse [x radius=3cm, y radius=1.5cm, rotate=-50]}
+\def\bounding{(-5,-3) rectangle (5,4)}
+
+\begin{document}
+
+  % contains individual pieces
+  \input{venn}
+
+  \begin{tikzpicture}[remember picture]
+    \tikzset{venn1}
+    \tikzset{venn2}
+    \tikzset{venn4}
+    \tikzset{venn8}
+    \tikzset{venn12}
+    \tikzset{venn14}
+    \tikzset{vennoutlines}
+  \end{tikzpicture}  
+
+\end{document}
